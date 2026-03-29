@@ -55,8 +55,8 @@ export default function PatientModal({ patient, onClose, onPatientUpdated, netwo
       const patientTurnos = res.data
         .filter((t: any) => field(t, 'patient_id') === patient.id)
         .sort((a: any, b: any) => {
-          const fa = field(a, 'date') || '';
-          const fb = field(b, 'date') || '';
+          const fa = field(a, 'appointment_date') || '';
+          const fb = field(b, 'appointment_date') || '';
           return fb.localeCompare(fa);
         });
       setHistorial(patientTurnos);
@@ -208,8 +208,8 @@ export default function PatientModal({ patient, onClose, onPatientUpdated, netwo
                       <div key={t.id} className="border border-gray-100 rounded-lg p-3">
                         <div className="flex items-center gap-2 mb-1">
                           <span className="text-xs text-gray-500">
-                            {field(t, 'date')?.split('T')[0] || '-'}
-                            {field(t, 'time') && <span className="ml-1">{field(t, 'time')}</span>}
+                            {field(t, 'appointment_date')?.split('T')[0] || '-'}
+                            {field(t, 'appointment_date')?.split('T')[1]?.slice(0, 5) && <span className="ml-1">{field(t, 'appointment_date')?.split('T')[1]?.slice(0, 5)}</span>}
                           </span>
                           <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${badge.bg} ${badge.text}`}>{badge.label}</span>
                           {doc && <span className="text-xs text-gray-400">{getRecordDisplayName(doc)}</span>}

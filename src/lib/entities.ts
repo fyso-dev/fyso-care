@@ -73,10 +73,9 @@ export const turnosConfig: EntityConfig = {
   name: 'appointments',
   displayName: 'Turno',
   displayNamePlural: 'Turnos',
-  displayField: 'date',
+  displayField: 'appointment_date',
   fields: [
-    { key: 'date', label: 'Fecha', type: 'date', required: true, showInTable: true },
-    { key: 'time', label: 'Hora', type: 'text', required: true, showInTable: true },
+    { key: 'appointment_date', label: 'Fecha y Hora', type: 'date', required: true, showInTable: true },
     { key: 'patient_id', label: 'Paciente', type: 'relationship', relation: { entity: 'patients', displayField: 'last_name' }, required: true, showInTable: true },
     { key: 'doctor_id', label: 'Profesional', type: 'relationship', relation: { entity: 'doctors', displayField: 'name' }, required: true, showInTable: true },
     { key: 'service_id', label: 'Servicio', type: 'relationship', relation: { entity: 'services', displayField: 'name' }, showInTable: true },

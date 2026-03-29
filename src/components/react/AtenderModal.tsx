@@ -44,8 +44,8 @@ export default function AtenderModal({ turno, patient, network, doctorsLookup, o
           t.id !== turno.id
         )
         .sort((a: any, b: any) => {
-          const fa = field(a, 'date') || '';
-          const fb = field(b, 'date') || '';
+          const fa = field(a, 'appointment_date') || '';
+          const fb = field(b, 'appointment_date') || '';
           return fb.localeCompare(fa);
         })
         .slice(0, 10);
@@ -146,7 +146,7 @@ export default function AtenderModal({ turno, patient, network, doctorsLookup, o
                   return (
                     <div key={t.id} className="border border-gray-100 rounded-lg p-3">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-xs text-gray-500">{field(t, 'date')?.split('T')[0] || '-'}</span>
+                        <span className="text-xs text-gray-500">{field(t, 'appointment_date')?.split('T')[0] || '-'}</span>
                         <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${badge.bg} ${badge.text}`}>{badge.label}</span>
                       </div>
                       {field(t, 'consultation_notes') && (

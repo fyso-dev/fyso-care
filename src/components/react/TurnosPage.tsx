@@ -139,8 +139,7 @@ export default function TurnosPage() {
 
       const appointmentData: Record<string, any> = {
         doctor_id: selectedDoctor.id,
-        date: selectedDate,
-        time: slotTime(selectedSlot),
+        appointment_date: `${selectedDate}T${slotTime(selectedSlot).slice(0, 5)}:00`,
         status: 'pendiente',
       };
       if (patientId) appointmentData.patient_id = patientId;
