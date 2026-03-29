@@ -1,8 +1,10 @@
 const BASE_URL = 'https://app.fyso.dev';
 const TENANT_ID = import.meta.env.PUBLIC_TENANT_ID || 'consultorio';
+const TOKEN_KEY = `${TENANT_ID}_token`;
+const USER_KEY = `${TENANT_ID}_user`;
 
 function getToken(): string | null {
-  return localStorage.getItem('consultorio_token');
+  return localStorage.getItem(TOKEN_KEY);
 }
 
 function getHeaders(): Record<string, string> {
@@ -16,8 +18,8 @@ function getHeaders(): Record<string, string> {
 }
 
 function handleUnauthorized() {
-  localStorage.removeItem('consultorio_token');
-  localStorage.removeItem('consultorio_user');
+  localStorage.removeItem(TOKEN_KEY);
+  localStorage.removeItem(USER_KEY);
   window.location.href = '/login';
 }
 

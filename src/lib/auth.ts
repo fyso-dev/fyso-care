@@ -1,5 +1,7 @@
 const BASE_URL = 'https://app.fyso.dev';
 const TENANT_ID = import.meta.env.PUBLIC_TENANT_ID || 'consultorio';
+const TOKEN_KEY = `${TENANT_ID}_token`;
+const USER_KEY = `${TENANT_ID}_user`;
 
 export async function login(email: string, password: string): Promise<{ success: boolean; error?: string }> {
   try {
@@ -21,9 +23,9 @@ export async function login(email: string, password: string): Promise<{ success:
     const token = data.data?.token || data.token;
     if (!token) return { success: false, error: 'No se recibio token' };
 
-    localStorage.setItem('consultorio_token', token);
+    localStorage.setItem(TOKEN_KEY, token);
     const user = data.data?.user || data.user || { email };
-    localStorage.setItem('consultorio_user', JSON.stringify(user));
+    localStorage.setItem(USER_KEY, JSON.stringify(user));
 
     return { success: true };
   } catch {
@@ -32,22 +34,22 @@ export async function login(email: string, password: string): Promise<{ success:
 }
 
 export function logout() {
-  localStorage.removeItem('consultorio_token');
-  localStorage.removeItem('consultorio_user');
+  localStorage.removeItem(TOKEN_KEY);
+  localStorage.removeItem(USER_KEY);
   window.location.href = '/login';
 }
 
 export function isAuthenticated(): boolean {
-  return !!localStorage.getItem('consultorio_token');
+  return !!localStorage.getItem(TOKEN_KEY);
 }
 
 export function getUser(): any {
   try {
-    const raw = localStorage.getItem('consultorio_user');
+    const raw = localStorage.getItem(USER_KEY);
     return raw ? JSON.parse(raw) : null;
   } catch { return null; }
 }
 
 export function getToken(): string | null {
-  return localStorage.getItem('consultorio_token');
+  return localStorage.getItem(TOKEN_KEY);
 }
