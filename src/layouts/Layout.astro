@@ -22,12 +22,12 @@ const siteConfig: Record<string, string> = await fetchSiteConfig().catch(() => (
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Consultorio - Sistema de turnos online" />
+    <meta name="description" content="My Clinic - Sistema de turnos online" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <title>{title} | Consultorio</title>
+    <title>{title} | {siteConfig.clinic_name || 'My Clinic'}</title>
   </head>
   <body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
     <!-- Navigation -->
@@ -36,9 +36,9 @@ const siteConfig: Record<string, string> = await fetchSiteConfig().catch(() => (
         <div class="flex items-center justify-between h-16">
           <a href="/" class="flex items-center gap-2 group">
             <div class="w-9 h-9 bg-teal-500 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-md shadow-teal-500/20 group-hover:shadow-lg group-hover:shadow-teal-500/30 transition-shadow" data-sc-initial="clinic_name">
-              C
+              {(siteConfig.clinic_name || 'M')[0]}
             </div>
-            <span class="text-xl font-bold text-gray-900" data-sc="clinic_name">Consultorio</span>
+            <span class="text-xl font-bold text-gray-900" data-sc="clinic_name">{siteConfig.clinic_name || 'My Clinic'}</span>
           </a>
 
           <div class="hidden md:flex items-center gap-1">
@@ -119,8 +119,8 @@ const siteConfig: Record<string, string> = await fetchSiteConfig().catch(() => (
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <div>
             <div class="flex items-center gap-2 mb-4">
-              <div class="w-8 h-8 bg-teal-500 rounded-lg flex items-center justify-center text-white font-bold" data-sc-initial="clinic_name">C</div>
-              <span class="text-lg font-bold text-white" data-sc="clinic_name">Consultorio</span>
+              <div class="w-8 h-8 bg-teal-500 rounded-lg flex items-center justify-center text-white font-bold" data-sc-initial="clinic_name">{(siteConfig.clinic_name || 'M')[0]}</div>
+              <span class="text-lg font-bold text-white" data-sc="clinic_name">{siteConfig.clinic_name || 'My Clinic'}</span>
             </div>
             <p class="text-sm" data-sc="clinic_slogan">Tu consultorio de confianza. Turnos online las 24 horas.</p>
           </div>
@@ -174,7 +174,7 @@ const siteConfig: Record<string, string> = await fetchSiteConfig().catch(() => (
           });
         }
         if (c.clinic_name) {
-          document.title = document.title.replace('Consultorio', c.clinic_name);
+          document.title = document.title.replace('My Clinic', c.clinic_name);
         }
       }
     </script>
