@@ -53,15 +53,8 @@ export function field(record: any, key: string): any {
   return record?.data?.[key] ?? null;
 }
 
-export async function fetchOwners() { return apiFetch('owners'); }
-export async function fetchPets() { return apiFetch('pets'); }
-export async function fetchSpecies() { return apiFetch('species'); }
-export async function fetchVets() { return apiFetch('vets'); }
 export async function fetchServices() { return apiFetch('services'); }
 export async function fetchAppointments() { return apiFetch('appointments'); }
-export async function fetchVisits() { return apiFetch('visits'); }
-export async function fetchProducts() { return apiFetch('products'); }
-export async function fetchTestimonials() { return apiFetch('testimonials'); }
 
 export async function fetchSiteConfig(): Promise<Record<string, any>> {
   const records = await apiFetch('site_config');
@@ -103,22 +96,6 @@ export function resolve(record: any, relKey: string, lookup: Record<string, any>
 export function resolveDisplayName(record: any, relKey: string, lookup: Record<string, any>): string {
   const related = resolve(record, relKey, lookup);
   return getRecordDisplayName(related);
-}
-
-export function getPetDisplayName(pet: any): string {
-  return field(pet, 'name') || 'Sin nombre';
-}
-
-export function getOwnerFullName(owner: any): string {
-  const first = field(owner, 'first_name') || '';
-  const last = field(owner, 'last_name') || '';
-  return `${first} ${last}`.trim() || 'Desconocido';
-}
-
-export function getVetFullName(vet: any): string {
-  const first = field(vet, 'first_name') || '';
-  const last = field(vet, 'last_name') || '';
-  return `${first} ${last}`.trim() || 'Desconocido';
 }
 
 export function formatDate(dateStr: string | null): string {
