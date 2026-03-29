@@ -1,5 +1,5 @@
 const BASE_URL = 'https://app.fyso.dev';
-const TENANT_ID = 'consultorio';
+const TENANT_ID = import.meta.env.TENANT_ID || 'consultorio';
 const API_TOKEN = import.meta.env.FYSO_API_TOKEN;
 
 if (!API_TOKEN) {
