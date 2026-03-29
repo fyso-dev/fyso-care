@@ -1,34 +1,13 @@
 const BASE_URL = 'https://app.fyso.dev';
 const TENANT_ID = 'consultorio';
-const AUTH_EMAIL = import.meta.env.FYSO_ADMIN_EMAIL;
-const AUTH_PASSWORD = import.meta.env.FYSO_ADMIN_PASSWORD;
+const API_TOKEN = import.meta.env.FYSO_API_TOKEN;
 
-let cachedToken: string | null = null;
-
-async function getToken(): Promise<string> {
-  if (cachedToken) return cachedToken;
-
-  const res = await fetch(`${BASE_URL}/api/auth/tenant/login`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-Tenant-ID': TENANT_ID,
-    },
-    body: JSON.stringify({ email: AUTH_EMAIL, password: AUTH_PASSWORD }),
-  });
-
-  if (!res.ok) {
-    throw new Error(`Auth failed: ${res.status} ${await res.text()}`);
-  }
-
-  const data = await res.json();
-  cachedToken = data.data?.token || data.token;
-  if (!cachedToken) throw new Error('No token in auth response');
-  return cachedToken;
+if (!API_TOKEN) {
+  throw new Error('FYSO_API_TOKEN env var is not set');
 }
 
 async function apiFetch(entity: string, params: Record<string, string> = {}): Promise<any[]> {
-  const token = await getToken();
+  const token = API_TOKEN;
   const query = new URLSearchParams({ limit: '200', ...params });
   const url = `${BASE_URL}/api/entities/${entity}/records?${query}`;
 
