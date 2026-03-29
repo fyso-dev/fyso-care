@@ -11,7 +11,7 @@ export const patientsConfig: EntityConfig = {
     { key: 'dni', label: 'DNI', type: 'text', showInTable: true },
     { key: 'email', label: 'Email', type: 'email', showInTable: true },
     { key: 'phone', label: 'Telefono', type: 'text', showInTable: true },
-    { key: 'birthdate', label: 'Fecha de Nacimiento', type: 'date' },
+    { key: 'date_of_birth', label: 'Fecha de Nacimiento', type: 'date' },
     { key: 'sex', label: 'Sexo', type: 'select', options: ['Masculino', 'Femenino', 'Otro'] },
     { key: 'address', label: 'Direccion', type: 'text' },
     { key: 'city', label: 'Ciudad', type: 'text' },

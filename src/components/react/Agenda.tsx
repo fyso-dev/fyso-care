@@ -862,8 +862,8 @@ export default function Agenda() {
                             className={`text-sm font-medium ${patient ? 'text-teal-700 hover:underline cursor-pointer' : 'text-gray-900'}`}
                           >
                             {patient ? getRecordDisplayName(patient) : '-'}
-                            {patient?.data?.birthdate && (
-                              <span className="text-gray-500 font-normal ml-1">({calcAge(patient.data.birthdate)})</span>
+                            {patient?.data?.date_of_birth && (
+                              <span className="text-gray-500 font-normal ml-1">({calcAge(patient.data.date_of_birth)})</span>
                             )}
                           </button>
                           <span className={`ml-auto px-2 py-0.5 rounded-full text-xs font-medium ${badge.bg} ${badge.text}`}>{badge.label}</span>

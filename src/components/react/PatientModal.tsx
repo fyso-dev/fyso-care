@@ -30,7 +30,7 @@ export default function PatientModal({ patient, onClose, onPatientUpdated, netwo
     first_name: patient.data?.first_name || '',
     last_name: patient.data?.last_name || '',
     dni: patient.data?.dni || '',
-    birthdate: patient.data?.birthdate?.split('T')[0] || '',
+    date_of_birth: patient.data?.date_of_birth?.split('T')[0] || '',
     email: patient.data?.email || '',
     phone: patient.data?.phone || '',
     network_id: patient.data?.network_id || '',
@@ -133,7 +133,7 @@ export default function PatientModal({ patient, onClose, onPatientUpdated, netwo
                 </div>
                 <div>
                   <label className="block text-xs font-medium text-gray-600 mb-1">Fecha de Nacimiento</label>
-                  <input type="date" value={form.birthdate} onChange={e => setField('birthdate', e.target.value)} className={inputClass} />
+                  <input type="date" value={form.date_of_birth} onChange={e => setField('date_of_birth', e.target.value)} className={inputClass} />
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
