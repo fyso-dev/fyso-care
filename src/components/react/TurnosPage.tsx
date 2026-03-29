@@ -228,8 +228,8 @@ export default function TurnosPage() {
                       <div className="flex items-center justify-between">
                         <div>
                           <p className="font-semibold text-gray-900 group-hover:text-teal-700">{doc.data?.name}</p>
-                          {doc.data?.specialization && (
-                            <p className="text-sm text-gray-500 mt-0.5">{doc.data.specialization}</p>
+                          {doc.data?.specialty && (
+                            <p className="text-sm text-gray-500 mt-0.5">{doc.data.specialty}</p>
                           )}
                           {doc.data?.nota_publica && (
                             <p className="text-xs text-gray-400 mt-1">{doc.data.nota_publica}</p>

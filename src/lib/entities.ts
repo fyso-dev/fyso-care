@@ -30,7 +30,7 @@ export const doctorsConfig: EntityConfig = {
   displayField: 'name',
   fields: [
     { key: 'name', label: 'Nombre completo', type: 'text', required: true, showInTable: true },
-    { key: 'specialization', label: 'Especialidad', type: 'text', showInTable: true },
+    { key: 'specialty', label: 'Especialidad', type: 'text', showInTable: true },
     { key: 'email', label: 'Email', type: 'email', showInTable: true },
     { key: 'enabled', label: 'Habilitado', type: 'boolean', showInTable: true },
     { key: 'online', label: 'Turnos Online', type: 'boolean', showInTable: true },

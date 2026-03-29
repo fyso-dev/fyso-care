@@ -108,7 +108,7 @@ export default function DoctorsPage() {
                         {d.online ? 'Si' : 'No'}
                       </span>
                     </td>
-                    <td className="px-4 py-3 text-sm text-gray-500">{d.specialization || '-'}</td>
+                    <td className="px-4 py-3 text-sm text-gray-500">{d.specialty || '-'}</td>
                     <td className="px-4 py-3">
                       <div className="flex items-center gap-1">
                         <button
