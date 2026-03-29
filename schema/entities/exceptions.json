@@ -1,0 +1,17 @@
+{
+  "name": "exceptions",
+  "displayName": "Dias Deshabilitados",
+  "description": "Dias en que un profesional no atiende (vacaciones, licencias, etc.)",
+  "version": 1,
+  "status": "published",
+  "displayField": null,
+  "fields": [
+    { "fieldKey": "doctor_id", "name": "Profesional", "type": "relation", "required": true, "isSystem": false, "config": { "relatedEntity": "doctors" } },
+    { "fieldKey": "since_date", "name": "Desde Fecha", "type": "date", "required": true, "isSystem": false },
+    { "fieldKey": "to_date", "name": "Hasta Fecha", "type": "date", "required": true, "isSystem": false },
+    { "fieldKey": "since_time", "name": "Desde Hora", "type": "text", "required": false, "isSystem": false },
+    { "fieldKey": "to_time", "name": "Hasta Hora", "type": "text", "required": false, "isSystem": false },
+    { "fieldKey": "exception_type", "name": "Tipo", "type": "text", "required": false, "isSystem": false },
+    { "fieldKey": "description", "name": "Descripcion", "type": "longText", "required": false, "isSystem": false }
+  ]
+}

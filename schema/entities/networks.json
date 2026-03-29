@@ -1,0 +1,12 @@
+{
+  "name": "networks",
+  "displayName": "Obras Sociales",
+  "description": "Obras sociales y prepagas",
+  "version": 1,
+  "status": "published",
+  "displayField": null,
+  "fields": [
+    { "fieldKey": "name", "name": "Nombre", "type": "text", "required": true, "isSystem": false },
+    { "fieldKey": "code_fmy", "name": "Codigo FMY", "type": "text", "required": false, "isSystem": false }
+  ]
+}

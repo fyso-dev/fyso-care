@@ -1,0 +1,11 @@
+{
+  "name": "specialties",
+  "displayName": "Especialidades",
+  "description": "Especialidades medicas",
+  "version": 1,
+  "status": "published",
+  "displayField": null,
+  "fields": [
+    { "fieldKey": "name", "name": "Nombre", "type": "text", "required": true, "isSystem": false }
+  ]
+}

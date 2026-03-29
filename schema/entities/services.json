@@ -1,0 +1,11 @@
+{
+  "name": "services",
+  "displayName": "Servicios",
+  "description": "Tipos de servicio (A Consulta, Turno Online, etc.)",
+  "version": 1,
+  "status": "published",
+  "displayField": null,
+  "fields": [
+    { "fieldKey": "name", "name": "Nombre", "type": "text", "required": true, "isSystem": false }
+  ]
+}

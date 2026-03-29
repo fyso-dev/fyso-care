@@ -1,0 +1,24 @@
+{
+  "name": "appointments",
+  "displayName": "Appointments",
+  "description": "Citas medicas programadas",
+  "version": 2,
+  "status": "published",
+  "displayField": null,
+  "fields": [
+    { "fieldKey": "appointment_date", "name": "Appointment date", "type": "datetime", "required": true, "isSystem": true, "description": "Fecha y hora de la cita" },
+    { "fieldKey": "duration_minutes", "name": "Duration minutes", "type": "number", "required": false, "isSystem": true, "description": "Duracion estimada en minutos" },
+    { "fieldKey": "reason", "name": "Reason", "type": "textarea", "required": false, "isSystem": true, "description": "Motivo de la consulta" },
+    { "fieldKey": "date", "name": "Fecha", "type": "date", "required": true, "isSystem": false, "description": "" },
+    { "fieldKey": "time", "name": "Hora", "type": "text", "required": true, "isSystem": false, "description": "" },
+    { "fieldKey": "status", "name": "Estado", "type": "text", "required": true, "isSystem": false, "description": "Pendiente, Presente, Completado, Cancelado, Bloqueado" },
+    { "fieldKey": "overtime", "name": "Sobreturno", "type": "boolean", "required": false, "isSystem": false, "description": "" },
+    { "fieldKey": "consultation_notes", "name": "Notas Consulta", "type": "longText", "required": false, "isSystem": false, "description": "" },
+    { "fieldKey": "appointment_notes", "name": "Notas Turno", "type": "longText", "required": false, "isSystem": false, "description": "" },
+    { "fieldKey": "patient_id", "name": "Paciente", "type": "relation", "required": false, "isSystem": false, "config": { "relatedEntity": "patients" } },
+    { "fieldKey": "doctor_id", "name": "Profesional", "type": "relation", "required": false, "isSystem": false, "config": { "relatedEntity": "doctors" } },
+    { "fieldKey": "service_id", "name": "Servicio", "type": "relation", "required": false, "isSystem": false, "config": { "relatedEntity": "services" } },
+    { "fieldKey": "network_id", "name": "Obra Social", "type": "relation", "required": false, "isSystem": false, "config": { "relatedEntity": "networks" } },
+    { "fieldKey": "status_select_test", "name": "Estado Select", "type": "select", "required": false, "isSystem": false, "description": "Test select field" }
+  ]
+}

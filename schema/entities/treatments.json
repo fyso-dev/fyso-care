@@ -1,0 +1,16 @@
+{
+  "name": "treatments",
+  "displayName": "Treatments",
+  "description": "Tratamientos y procedimientos realizados a pacientes",
+  "version": 1,
+  "status": "published",
+  "displayField": null,
+  "fields": [
+    { "fieldKey": "name", "name": "Name", "type": "text", "required": true, "isSystem": true, "description": "Nombre del tratamiento o procedimiento" },
+    { "fieldKey": "treatment_date", "name": "Date", "type": "date", "required": true, "isSystem": true, "description": "Fecha en que se realizo el tratamiento" },
+    { "fieldKey": "cost", "name": "Cost", "type": "number", "required": false, "isSystem": true, "description": "Costo del tratamiento" },
+    { "fieldKey": "notes", "name": "Notes", "type": "textarea", "required": false, "isSystem": true, "description": "Notas del tratamiento" },
+    { "fieldKey": "doctor_id", "name": "Doctor", "type": "relation", "required": true, "isSystem": true, "config": { "relatedEntity": "doctors", "displayField": "name" } },
+    { "fieldKey": "patient_id", "name": "Patient", "type": "relation", "required": true, "isSystem": true, "config": { "relatedEntity": "patients", "displayField": "name" } }
+  ]
+}

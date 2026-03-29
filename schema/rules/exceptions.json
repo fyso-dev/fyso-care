@@ -1,0 +1,13 @@
+[
+  {
+    "id": "b6a908e8-735c-45d1-ade6-5a2156c34a02",
+    "name": "validate_exception_date_range",
+    "entity": "exceptions",
+    "description": "Ensures to_date >= since_date",
+    "triggerType": "before_save",
+    "triggerFields": [],
+    "status": "draft",
+    "priority": 100,
+    "generatedBy": "ai"
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "name": "site_config",
+  "displayName": "Configuracion del sitio",
+  "description": "Configuracion general del sitio web del consultorio",
+  "version": 1,
+  "status": "published",
+  "displayField": "clinic_name",
+  "fields": [
+    { "fieldKey": "clinic_name", "name": "Nombre clinica", "type": "text", "required": false, "isSystem": false },
+    { "fieldKey": "clinic_slogan", "name": "Slogan", "type": "text", "required": false, "isSystem": false },
+    { "fieldKey": "hero_title", "name": "Hero titulo", "type": "text", "required": false, "isSystem": false },
+    { "fieldKey": "hero_subtitle", "name": "Hero subtitulo", "type": "textarea", "required": false, "isSystem": false },
+    { "fieldKey": "cta_title", "name": "CTA titulo", "type": "text", "required": false, "isSystem": false },
+    { "fieldKey": "cta_subtitle", "name": "CTA subtitulo", "type": "text", "required": false, "isSystem": false },
+    { "fieldKey": "address", "name": "Direccion", "type": "text", "required": false, "isSystem": false },
+    { "fieldKey": "phone", "name": "Telefono", "type": "text", "required": false, "isSystem": false },
+    { "fieldKey": "email", "name": "Email", "type": "email", "required": false, "isSystem": false },
+    { "fieldKey": "whatsapp", "name": "WhatsApp", "type": "text", "required": false, "isSystem": false },
+    { "fieldKey": "hours_weekday", "name": "Horario semana", "type": "text", "required": false, "isSystem": false },
+    { "fieldKey": "hours_saturday", "name": "Horario sabado", "type": "text", "required": false, "isSystem": false },
+    { "fieldKey": "hours_sunday", "name": "Horario domingo", "type": "text", "required": false, "isSystem": false },
+    { "fieldKey": "emergency_hours", "name": "Horario urgencias", "type": "text", "required": false, "isSystem": false },
+    { "fieldKey": "google_maps_url", "name": "Google Maps URL", "type": "text", "required": false, "isSystem": false }
+  ]
+}

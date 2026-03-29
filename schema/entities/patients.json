@@ -1,0 +1,27 @@
+{
+  "name": "patients",
+  "displayName": "Patients",
+  "description": "Registro de pacientes de la clinica",
+  "version": 1,
+  "status": "published",
+  "displayField": null,
+  "fields": [
+    { "fieldKey": "name", "name": "Name", "type": "text", "required": true, "isSystem": true, "description": "Nombre completo del paciente" },
+    { "fieldKey": "date_of_birth", "name": "Date of birth", "type": "date", "required": false, "isSystem": true, "description": "Fecha de nacimiento" },
+    { "fieldKey": "notes", "name": "Notes", "type": "textarea", "required": false, "isSystem": true, "description": "Notas clinicas generales" },
+    { "fieldKey": "first_name", "name": "Nombre", "type": "text", "required": true, "isSystem": false },
+    { "fieldKey": "last_name", "name": "Apellido", "type": "text", "required": false, "isSystem": false },
+    { "fieldKey": "dni", "name": "DNI", "type": "text", "required": false, "isSystem": false },
+    { "fieldKey": "email", "name": "Email", "type": "text", "required": false, "isSystem": false },
+    { "fieldKey": "phone", "name": "Telefono", "type": "text", "required": false, "isSystem": false },
+    { "fieldKey": "birthdate", "name": "Fecha Nacimiento", "type": "date", "required": false, "isSystem": false },
+    { "fieldKey": "sex", "name": "Sexo", "type": "text", "required": false, "isSystem": false },
+    { "fieldKey": "address", "name": "Direccion", "type": "text", "required": false, "isSystem": false },
+    { "fieldKey": "city", "name": "Ciudad", "type": "text", "required": false, "isSystem": false },
+    { "fieldKey": "network_id", "name": "Obra Social", "type": "relation", "required": false, "isSystem": false, "config": { "relatedEntity": "networks" } },
+    { "fieldKey": "medical_record", "name": "Historia Clinica", "type": "longText", "required": false, "isSystem": false },
+    { "fieldKey": "prof_cabecera", "name": "Profesional Cabecera", "type": "text", "required": false, "isSystem": false },
+    { "fieldKey": "warnings", "name": "Alertas", "type": "longText", "required": false, "isSystem": false },
+    { "fieldKey": "contact_details", "name": "Contacto Extra", "type": "longText", "required": false, "isSystem": false }
+  ]
+}

@@ -1,0 +1,35 @@
+[
+  {
+    "id": "f1010101-0101-4101-f101-010101010101",
+    "name": "default_appointment_duration",
+    "entity": "appointments",
+    "description": "Si no se especifica duracion, asigna 30 minutos por defecto",
+    "triggerType": "before_save",
+    "triggerFields": [],
+    "status": "published",
+    "priority": 100,
+    "generatedBy": "prebuild"
+  },
+  {
+    "id": "f2020202-0202-4202-f202-020202020202",
+    "name": "default_appointment_status",
+    "entity": "appointments",
+    "description": "Toda cita nueva comienza en estado 'scheduled'",
+    "triggerType": "before_save",
+    "triggerFields": [],
+    "status": "published",
+    "priority": 200,
+    "generatedBy": "prebuild"
+  },
+  {
+    "id": "cb988600-258f-4a28-b6fa-4adcb930bdfe",
+    "name": "validate_appointment_date_future",
+    "entity": "appointments",
+    "description": "Rejects appointments with date in the past",
+    "triggerType": "before_save",
+    "triggerFields": ["date"],
+    "status": "draft",
+    "priority": 100,
+    "generatedBy": "ai"
+  }
+]

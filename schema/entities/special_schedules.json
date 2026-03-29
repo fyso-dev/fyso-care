@@ -1,0 +1,16 @@
+{
+  "name": "special_schedules",
+  "displayName": "Dias Excepcionales",
+  "description": "Horarios especiales para un dia puntual que sobreescriben el horario semanal",
+  "version": 1,
+  "status": "published",
+  "displayField": null,
+  "fields": [
+    { "fieldKey": "doctor_id", "name": "Profesional", "type": "relation", "required": true, "isSystem": false, "config": { "relatedEntity": "doctors" } },
+    { "fieldKey": "date", "name": "Fecha", "type": "date", "required": true, "isSystem": false },
+    { "fieldKey": "start_time", "name": "Hora Inicio", "type": "text", "required": true, "isSystem": false },
+    { "fieldKey": "end_time", "name": "Hora Fin", "type": "text", "required": true, "isSystem": false },
+    { "fieldKey": "period", "name": "Duracion Turno (min)", "type": "number", "required": true, "isSystem": false },
+    { "fieldKey": "date_part", "name": "Turno", "type": "text", "required": false, "isSystem": false, "description": "morning o afternoon" }
+  ]
+}

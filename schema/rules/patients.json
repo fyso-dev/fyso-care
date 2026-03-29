@@ -1,0 +1,24 @@
+[
+  {
+    "id": "3fa85f65-5035-429c-9a47-407ab9d6d2c0",
+    "name": "compute_patient_full_name",
+    "entity": "patients",
+    "description": "Auto-sets name from first_name + last_name",
+    "triggerType": "before_save",
+    "triggerFields": ["first_name", "last_name"],
+    "status": "published",
+    "priority": 100,
+    "generatedBy": "ai"
+  },
+  {
+    "id": "6e4bcedb-fa95-4832-a93f-c56d8c4d0a06",
+    "name": "validate_patient_contact",
+    "entity": "patients",
+    "description": "Requires at least phone or email",
+    "triggerType": "before_save",
+    "triggerFields": [],
+    "status": "draft",
+    "priority": 100,
+    "generatedBy": "ai"
+  }
+]
