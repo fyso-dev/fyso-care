@@ -1,5 +1,5 @@
 const BASE_URL = 'https://app.fyso.dev';
-const TENANT_ID = 'consultorio';
+const TENANT_ID = import.meta.env.PUBLIC_TENANT_ID || 'consultorio';
 
 function getToken(): string | null {
   return localStorage.getItem('consultorio_token');
