@@ -93,7 +93,8 @@ import Layout from '../layouts/Layout.astro';
     // Update Google Maps iframe when config loads
     var checkMap = setInterval(function() {
       try {
-        var cached = sessionStorage.getItem('consultorio_site_config');
+        var tenantId = import.meta.env.PUBLIC_TENANT_ID || 'consultorio';
+        var cached = sessionStorage.getItem(tenantId + '_site_config');
         if (!cached) return;
         var parsed = JSON.parse(cached);
         var d = parsed.data;

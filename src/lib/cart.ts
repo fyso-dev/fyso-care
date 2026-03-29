@@ -5,7 +5,8 @@ export interface CartItem {
   quantity: number;
 }
 
-const CART_KEY = 'consultorio_cart';
+const TENANT_ID = import.meta.env.PUBLIC_TENANT_ID || 'consultorio';
+const CART_KEY = `${TENANT_ID}_cart`;
 
 function notify() {
   window.dispatchEvent(new CustomEvent('cart-updated'));

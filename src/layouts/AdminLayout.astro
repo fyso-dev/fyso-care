@@ -133,9 +133,12 @@ const sidebarLinks = [
       mobileOverlay?.addEventListener('click', toggleMenu);
       mobileClose?.addEventListener('click', toggleMenu);
 
+      const TENANT_ID = import.meta.env.PUBLIC_TENANT_ID || 'consultorio';
+      const TOKEN_KEY = `${TENANT_ID}_token`;
+      const USER_KEY = `${TENANT_ID}_user`;
       document.getElementById('logout-btn')?.addEventListener('click', () => {
-        localStorage.removeItem('consultorio_token');
-        localStorage.removeItem('consultorio_user');
+        localStorage.removeItem(TOKEN_KEY);
+        localStorage.removeItem(USER_KEY);
         window.location.href = '/login';
       });
     </script>
